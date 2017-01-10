@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		//	\s{0}\s{1}\s{0}\s{1}\s{0}g\s{0}g\s{0}g\s{0}g\s{0}g\s{0}g\s{0}\s{1}\s{0}\s{1}\s{0}
+		
+//		\s{0}\s{1}\s{0}\s{1}\s{0}    
+		var str = "  gggggg  ";
+		function trim(str){
+			var re=/^\s+|\s+$/g;
+			console.log(str.match(re));
+			return str.replace(re,"$");
+		}
+		console.log(trim(str));
+		
+//		console.log( '('+trim(str)+')' );
+		
+		
+		
+//		console.log( '('+trim(str)+')' );
+//		function trim(str){
+//			var re = /^\s+|\s+$/g;
+//			console.log(str.match(re));
+//			return str.replace(re,'$');
+//		}
+	</script>
+</html>

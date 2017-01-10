@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			考虑 document html body;
+			
+			1.html body中只有一个有overflow属性时,这个属性会传给document
+			2.当且仅当html body都存在overflow属性时.body的overflow属性才能作用到body身上,
+			3.当html body都存在overflow属性时.body的overflow属性一直都会作用于body身上,
+										  html的overflow属性一直都会作用于document身上,
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html{
+				border: 1px solid deeppink;
+				margin: 30px;
+				height: 80%;
+				
+				overflow: scroll;
+			}
+			body{
+				border: 1px solid pink;
+				margin: 30px;
+				height: 80%;
+				
+				overflow: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height: 3000px;background: yellow;width: 200px;">
+			xfzxfzxfzxfz
+		</div>
+	</body>
+</html>

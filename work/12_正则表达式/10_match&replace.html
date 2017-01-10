@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	作者：offline
+        	时间：2016-04-14
+        	描述：
+        		两个紧挨字符之间存在着一个\s{0}
+        		字符串开头和结尾都存在一个\s{0};
+        		
+        	每一个空白字符相当于每一次lastindex跳到的位置，
+        				当匹配空白字符时才需要考虑空白字符
+        				不匹配空白字符时不用考虑空白字符，把它仅仅当成一个下标
+        	
+        	g{0}\s{1}g{0}\s{1}g{0}gg{0}gg{0}gg{0}gg{0}gg{0}gg{0}\s{1}g{0}\s{1}g{0}
+        -->
+        
+        g{0} g{0} g{0}gg{0}gg{0}gg{0}gg{0}gg{0}gg{0}g{0} g{0} g{0}
+        ""   ""   gggggg"" "" ""
+        
+        "  gggggg  "==>￥ ￥ ￥￥ ￥ ￥ 
+        
+        
+        gg
+	</head>
+	<body>
+	</body>
+	<script>
+		var reg=/g*/g;
+		var strArry0="  gggggg  ".match(reg);
+		console.log(strArry0);
+		
+		var strArry1="  gggggg  ".replace(reg,"￥");
+		console.log(strArry1);
+	
+		
+		
+	</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+        		1、给父级加高度 (扩展性不好)
+				2、给父级加浮动 (页面中所有元素都加浮动，margin左右自动失效（floats bad ！）)
+				3、空标签清除浮动 (IE6 最小高度 19px；（解决后IE6下还有2px偏差）)
+				4、.br清浮动	(不符合工作中：结构、样式、行为，三者分离的要求)
+				5、overflow
+				6、伪元素after
+        -->
+        
+        
+ 
+		<style>
+			.box{
+				border: 10px solid black;
+				margin: 0 auto;
+			}
+			/*ie 6 7底下不支持伪元素*/
+			.box:after{
+				content: "";
+				display: block;
+				clear: both;
+			}
+			.item{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				float: left;
+			}
+			
+		</style>
+		
+	</head>
+	<body >
+		<div class="box">
+			<div class="item"></div>
+		</div>
+	</body>
+</html>

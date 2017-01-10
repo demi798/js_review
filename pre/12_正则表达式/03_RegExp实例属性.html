@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			正则表达式的实例属性
+		-->
+	</head>
+	<body>
+	</body>
+	<script>
+		var pattern = /google/ig;
+		pattern.test("google google google");
+		pattern.test("google google google");
+		console.log(pattern.global); //true，是否全局了
+		console.log(pattern.ignoreCase); //true，是否忽略大小写
+		console.log(pattern.multiline); //false，是否支持换行
+		console.log(pattern.lastIndex); //6，下次的匹配位置
+		console.log(pattern.source); //google，正则表达式的源字符串
+		
+	</script>
+</html>

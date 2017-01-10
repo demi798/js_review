@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>定位版</title>
+<!--
+	1.缩小浏览器窗口时,整个内容区的宽度会变没,不满足用户的交互需求（跟初始包含块有关）
+	2.扩展性差,元素容易错位
+-->
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		min-width: 600px;
+	}
+	
+	div{
+		height: 200px;
+	}
+	.left{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 200px;
+		background: pink;
+	}
+	.right{
+		position: absolute;
+		top: 0;
+		right: 0;
+		width:200px ;
+		background: pink;
+	}
+	.center{
+		/*width: 100%;*/
+		padding: 0 200px;
+		background: gray;
+	}
+</style>
+</head>
+<body>
+	xfz
+	<div class="left">left</div>
+	<div class="center">center</div>
+	<div class="right">right</div>
+</body>
+<script>
+	
+	
+	
+	
+	
+	
+</script>
+</html>
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			要求:
+				1.不能以数字0开头
+				2.5到8位
+				3.必须都是数字
+		-->
+	</head>
+	<body>
+		<input type="text"  />
+		<input type="button" value="测试" />
+	</body>
+	<script>
+		var text = document.getElementsByTagName("input")[0];
+		var btn = document.getElementsByTagName("input")[1];
+		
+		//拖字符
+		var reg=/\d{5,8}/ig;   //模式字符串   模式修饰符
+		btn.onclick=function(){
+			if(reg.test(text.value)){
+				alert("是探探号");
+			}else{
+				alert("不是探探号");
+			}
+		}
+	</script>
+</html>

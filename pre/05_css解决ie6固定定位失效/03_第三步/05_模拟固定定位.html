@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+/*IE6中的元素为什么会跳动的：
+     这是因为IE有一个多步的渲染进程。当你滚动或调整你的浏览器大小的时候，
+     它将重置所有内容并重画页面，这个时候它就会重新处理css表达式，
+     但是这是DOM结构是先于CSS展示出来，所以这会引起一个"抖动"bug，
+     在此处固定位置的元素需要调整以跟上你的（页面）滚动，于是就会跳动，
+     解决此问题的技巧就是使用background-attachment:fixed
+     为body或html元素添加一个background-image。
+     这就会强制页面在重画之前先处理css。因为是在重画之前处理CSS，
+     它也就会同样在重画之前首先处理你的css表达式。这将让你实现完美的平滑的固定位置元素！
+     然后我发现background-image无需一张真实的图片，设置成about:blank就行。*/
+body {
+    _background: url(about:blank);
+    _background-attachment: fixed;
+}
+.box{height:2000px;}
+.div{
+	width:100px;
+	height:100px;
+	background:red; 
+	position:fixed;
+	left:100px;
+	top:100px;
+	_position:absolute;
+	_left:expression(eval(document.documentElement.scrollLeft+100));
+	_top:expression(eval(document.documentElement.scrollTop+100));
+	}
+
+</style>
+</head>
+<body>
+<div class="box">
+	<div class="div"></div>
+</div>
+</body>
+</html>

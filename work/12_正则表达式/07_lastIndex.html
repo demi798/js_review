@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			（源字符串，模式字符串，模式修饰符）
+			（必须要在开启全局的模式底下  g）
+			lastIndex的规则：
+				1.当lastIndex大于源字符串的长度时
+					test():false
+					exec():null
+					lastIndex:0
+					
+				2.当lastIndex小于源字符串的长度时
+					-匹配成功
+						test():true
+						exec():数组  封装了匹配成功的子字符串的信息
+						lastIndex:成功的子字符串的下一个位置(成功的子字符串紧接着的位置会算进lastIndex的目标位置)
+					-匹配失败
+						test():false
+						exec():null
+						lastIndex:0
+				
+				3.当lastIndex等于源字符串的长度时
+					如果没有匹配空白字符串
+						reg.test false
+						reg.exec null
+						lastindex 0
+					如果有匹配空白字符串
+						reg.test永远都是 true
+						reg.exec永远都是 ""
+						lastindex永远都是 源字符串的长度（lastindex不会发生改变）
+						
+				4.当匹配空白字符串\s{0}时
+						reg.test永远都是 true
+						reg.exec永远都是 ""
+						lastindex永远都是 0（lastindex不会发生改变）
+						
+						
+						
+						
+						match/replace（字符串的方法）
+						lastindex是一个读写属性！！！！
+						lastindex++
+		-->
+	</head>
+	<body>
+	</body>
+	<script>
+		//  /\s{0}/g: '\s{0}g\s{0}g\s{0}g\s{0}g\s{0}g\s{0}'
+		//  /g/g	  'ggggg'
+		
+		//	/g*/g      'g{0}gg{0}gg{0}gg{0}gg{0}gg{0}' 
+	
+		var pattern = /\s{0}/g;
+//		var pattern = /g*/g;
+		var str ='ggggg';
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 ture
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 ture
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 ture
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 ture
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 ture
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 ture
+		console.log(pattern.lastIndex+":"+pattern.test(str));//5 true
+		
+		
+		
+		
+	</script>
+</html>

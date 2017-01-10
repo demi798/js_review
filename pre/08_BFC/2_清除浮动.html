@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			6.计算BFC的高度时，浮动元素也参与计算。
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.wrap{
+				border: 1px solid;
+				overflow: hidden;
+			}
+			.inner{
+				float: left;
+				border: 1px solid deeppink;
+				width: 200px;
+				height: 200px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="inner">inner1</div>
+			<div class="inner">inner2</div>
+		</div>
+	</body>
+</html>
+
+

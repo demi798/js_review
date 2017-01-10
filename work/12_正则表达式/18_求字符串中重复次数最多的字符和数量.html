@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+//		数组的体系: es5 es5前
+//				数组方法的功能
+//				数组方法的返回值
+//				会影响老数组 
+	
+		var str="shjhcsjkdhfkjshfsdlkjhfkjdslhfjkehfiowehfse";
+		str=str.split("").sort().join("");
+		console.log(str);
+//		cdddeeeffffffhhhhhhhhijjjjjjkkkkkllossssssw
+//		abc
+
+		var code ="";
+		var num =0;
+		
+		var reg =/(\w)\1+/g;
+		
+		str.replace(reg,function($0,$1){
+			if($0.length>num){
+				num = $0.length;
+				code = $1;
+			}
+		})
+		
+		console.log("最多的那个字符是："+code+"；它出现的次数为："+num);
+	</script>
+</html>

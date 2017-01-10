@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+		由于:当祖先元素中没有拥有除static定位的元素时,absolute定位的包含块为初始包含块
+			初始包含块的大小等于视口的大小(注意 初始包含块不等同于视口)
+			
+			
+			1.不让初始包含块移动(怎么实现?===>把滚动条加到body上)
+			2.把滚动条加到body上
+			3.让body与与包含块重叠(优化)
+		-->
+		
+		
+		<!--2.把滚动条加到body上-->
+		<style>
+			div{
+				border: solid 1px black;
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+			}
+			
+			body{
+				border: solid 1px pink;
+				height: 1000px;
+				overflow: auto;
+			}
+			
+			html{
+				border: solid 1px blue;
+				margin: 30px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<p style="height: 2000px;width: 50px;background: gray;"></p>
+	</body>
+</html>

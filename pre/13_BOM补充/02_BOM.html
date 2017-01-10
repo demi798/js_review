@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" id="test" value="测试" />
+	</body>
+	<script>
+		var testNode = document.getElementById("test");
+//		var data=1;
+		testNode.onclick=function(){
+			var opener = window.open("http://127.0.0.1:8020/课程_0623/work/Dom&Bom补充/11_BOM.html","_self");//返回被打开窗口的window对象
+			opener.document.body.style.background="pink";
+//			opener.data=data;
+		}
+	</script>
+</html>

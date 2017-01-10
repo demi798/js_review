@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			li{
+				width: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li class="test">1</li>
+			<li class="test">2</li>
+			<li class="test">3</li>
+			<li class="test">4</li>
+		</ul>
+		<ul>
+			<li class="test">5</li>
+			<li class="test">6</li>
+			<li class="test">7</li>
+			<li class="test">8</li>
+		</ul>
+		<p class="test">pppppp</p>
+	</body>
+	<script type="text/javascript">
+//			为什么要自定义getElementsByClassName这个方法
+//					因为ie8以下,doucument的getElementsByClassName有兼容性问题
+//					
+//			实现过程需要注意的问题(需求)
+//				1.我们的class属性可能会有多个属性值
+//				2.这多个属性值很有可能重复
+//				3.属性值直接的分隔空格可能会有多个
+//				4.限定范围
+//				5.过滤元素
+		var parent = document.getElementsByTagName("ul")[0];
+		var arr = getElementByClassName(document,"test","p");
+		console.log(arr.length);
+		
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.background="pink";
+		}
+		
+		//函数的提升  函数的提升要优于变量的提升
+		
+		// 这个方法可能需要传三个参数   获取parent底下class为className的tagName标签
+		function getElementByClassName(parent,className,tagName){
+			var arr =[];
+//			getElementsByTagName:没有兼容性问题
+			var all = parent.getElementsByTagName(tagName);
+			for(var i=0;i<all.length;i++){
+//				属性的寻址		原型链
+//				变量的寻址		作用域链
+				var classArr = all[i].className.split(/\s+/);
+				for(var j=0;j<classArr.length;j++){
+					if(className==classArr[j]){
+						arr.push(all[i]);
+						break;//跳出当前循环
+						//continue 跳出本次循环
+						//return  结束当前函数
+					}
+				}
+			}
+			return arr;
+		};
+	</script>
+</html>

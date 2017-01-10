@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--布尔值属性
+			 这个属性的property类型是布尔类型
+			 
+			property不会同步attribute
+			没有动过property   attribute会同步property
+			动过property 		attribute不会同步property
+		-->
+	</head>
+	<body>
+		<input type="checkbox" name="xfz" id="xfz" value="tg"/>
+	</body>
+	<script type="text/javascript">
+		var xfz=document.querySelector("#xfz");
+		
+		debugger;
+		xfz.setAttribute("checked","xfz0");
+		xfz.setAttribute("checked","xfz1");
+		xfz.setAttribute("checked","xfz2");
+		xfz.setAttribute("checked","xfz3");
+		xfz.setAttribute("checked","xfz4");
+		xfz.setAttribute("checked","xfz5");
+		
+		
+		xfz.checked="xfz6";
+		xfz.checked="xfz7";
+		xfz.checked="xfz8";
+		xfz.checked="xfz9";
+		xfz.checked="xfz10";
+		xfz.checked=false;
+		
+		
+		xfz.setAttribute("checked","xfz11");
+		xfz.setAttribute("checked","xfz12");
+		xfz.setAttribute("checked","xfz13");
+		xfz.setAttribute("checked","xfz14");
+		xfz.setAttribute("checked","xfz15");
+		xfz.setAttribute("checked","xfz16");
+	</script>
+</html>

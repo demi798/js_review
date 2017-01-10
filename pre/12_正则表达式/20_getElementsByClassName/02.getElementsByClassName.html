@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<!--基础版-->
+<script>
+window.onload = function() {
+	
+	var testEls=getElementsByClassName();
+	for(var i=0;i<testEls.length;i++){
+		testEls[i].style.background="pink";
+	}
+	
+	function getElementsByClassName(){
+		var allEls = document.getElementsByTagName("*");
+		var arr=[];
+		
+		for(var i=0;i<allEls.length;i++){
+			if(allEls[i].className=="test"){
+				arr.push(allEls[i]);
+			}
+		}
+		return arr;
+	};
+	
+}
+</script>
+</head>
+
+<body>
+    <ul id="ul1">
+    	<li>11111111</li>
+        <li class="test">2222222222</li>
+        <li class="test">3333333333</li>
+        <li >44444444444</li>
+    </ul>
+</body>
+</html>

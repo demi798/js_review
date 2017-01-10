@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	
+	
+	<!--
+		"  fff  fff  "
+		
+		\s{0}：
+			[" ", " ", "f", "f", "f", " ", " ", "f", "f", "f", " ", " "]
+	 		["", "", "", "", "", "", "", "", "", "", "", "", ""]
+	 		$ $ $f$f$f$ $ $f$f$f$ $ $
+		
+		
+		\s*:
+			["", "f", "f", "f", "f", "f", "f", ""]
+            ["  ", "", "", "", "  ", "", "", "", "  ", ""]
+            $$f$f$f$$f$f$f$$
+		
+		
+		\s+:
+			["", "fff", "fff", ""]
+		    ["  ", "  ", "  "]
+		    $fff$fff$
+	 -->
+	
+	<script>
+		var str="  fff  fff  ";
+		var arr1 = str.split(/\s{0}/);
+//		var arr1 = str.split(/\s*/);
+//		var arr1 = str.split(/\s+/);
+		console.log(arr1);
+		
+		var arr2 = str.match(/\s{0}/g);
+//		var arr2 = str.match(/\s*/g);
+//		var arr2 = str.match(/\s+/g);
+		console.log(arr2);
+		
+		var arr3 = str.replace(/\s{0}/g,"$");
+//		var arr3 = str.replace(/\s*/g,"$");
+//		var arr3 = str.replace(/\s+/g,"$");
+		console.log(arr3);
+	</script>
+</html>

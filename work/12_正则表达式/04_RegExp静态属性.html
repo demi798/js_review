@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--RegExp的静态属性,兼容性有些问题-->
+	</head>
+	<body>
+	</body>
+	<script>
+		var pattern = /(atg)uigu/;
+		var str = 'atguigu atguigu atguigu';
+		pattern.test(str); //必须要执行一下
+		//当前被匹配的字符串(源字符串)
+		console.log(RegExp.input); //atguigu atguigu atguigu
+		//最后一次匹配前的子串
+		console.log(RegExp.leftContext); //空白字符
+		//在上次匹配之后的子串	
+		console.log(RegExp.rightContext); // atguigu atguigu
+		//最后一个匹配字符串
+		console.log(RegExp.lastMatch); //atguigu
+		//最后一对圆括号内的匹配子串（涉及到正则的分组）
+		console.log(RegExp.lastParen); //
+		
+		
+	</script>
+</html>

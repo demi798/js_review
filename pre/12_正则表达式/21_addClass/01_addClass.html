@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="test"></div>
+	</body>
+	<script>
+		/*
+		addClass
+		1.判断class是否为空
+			是：直接添加
+			否：判断原来的class中是否有要添加的class
+				是：直接返回
+				否：把要添加的class连接到原来的class中
+		*/
+		var divNode =document.getElementsByClassName("test")[0];
+		addClass(divNode,"test2");
+		
+		function addClass(obj,className){
+			if(obj.className){
+				//class不是空
+				var arr =obj.className.split(/\s+/);
+				if(indexOf(arr,className) == -1){
+					obj.className += (" "+className);
+				}
+
+//				var reg = new RegExp("\\b"+className+"\\b");
+//				if(!reg.test(obj.className)){
+//					obj.className += (" "+className);
+//				}
+			}else{
+				//class是空
+				obj.className = className;
+			}
+		}
+		
+		
+//		function indexOf(arr,item){
+//			for(var i=0;i<arr.length;i++){
+//				if(arr[i] == item){
+//					return i;
+//				}
+//			}
+//			return -1;
+//		}
+	</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+        		1、给父级加高度 (扩展性不好)
+				2、给父级加浮动 /绝对定位/固定定位(页面中所有元素都加浮动，margin左右自动失效（floats bad ！）)
+				3、给父级加overflow
+				4、空标签清除浮动 (IE6 最小高度 19px；（解决后IE6下还有2px偏差）)
+				5、.br清浮动	(不符合工作中：结构、样式、行为，三者分离的要求)
+				6、伪元素after
+        -->
+        
+        
+        <!--
+        	4、空标签清除浮动 (IE6 最小高度 19px；（用font-size:0解决后IE6下还有2px偏差）)
+        	
+        	兼容性:IE6 最小高度 19px,即一切高度小于19px的元素在IE6下都会被渲染成19px
+        -->
+		<style>
+			.box{
+				border: 10px solid black;
+				margin: 0 auto;
+			}
+			.item{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				float: left;
+			}
+			.clear{
+				height: 0;
+				clear: both;
+			}
+		</style>
+		
+	</head>
+	<body style="text-align: center;">
+		<div class="box">
+			<div class="item"></div>
+			<div class="clear"></div>
+		</div>
+	</body>
+</html>

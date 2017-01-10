@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				width: 900px;
+				padding: 0 30px;
+				margin: 0 auto;
+				border: 1px solid deeppink;
+				/*开启了bfc*/
+				overflow: hidden;
+			}
+			#left{
+				float: left;
+				width: 200px;
+				background: red;
+				padding-bottom: 10000px;
+				margin-bottom: -10000px;
+			}
+			#right{
+				float: left;
+				width: 700px;
+				background: green;
+				padding-bottom: 10000px;
+				margin-bottom: -10000px;
+			}
+			
+			
+			
+			.clearfix{
+				/*触发了ie的haslayout*/
+				*zoom: 1;
+			}
+			.clearfix:after{
+				content: "";
+				clear: both;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap" class="clearfix">
+			<div id="left">
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+				left<br />
+			</div>
+			<div id="right">
+				right<br />
+			</div>
+		</div>
+	</body>
+</html>

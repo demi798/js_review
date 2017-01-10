@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--我们需要根据 "调用位置" 上函数的 "调用方式" 来确定函数中this使用的   "绑定规则"-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function baz() {
+			console.log( "baz" +" "+this);
+			// 因此，当前调用位置在baz的函数作用域
+			bar(); // <-- bar的调用位置
+		}
+		
+		function bar() {
+			console.log( "bar" +" "+this);
+			// 因此，当前调用位置在bar的函数作用域
+			foo(); // <-- foo的调用位置
+		}
+		
+		function foo() {
+			console.log( "foo"+" "+this);
+		}
+		
+		// 因此，当前调用位置是全局作用域
+		baz(); // <-- baz的调用位置
+	</script>
+</html>

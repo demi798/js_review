@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea id="text">
+			
+		</textarea>
+		<br />
+		<input id="nmx" type="button" value="测试"/>
+	</body>
+	<script>
+		var textNode=document.getElementById("text");
+		var btn =document.getElementById("nmx");
+		btn.onclick=function(){
+			var text =textNode.value;
+			var reg=/^xfz/gm;
+			var arr=text.match(reg);
+			console.log(arr);
+		}
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>xfz1<a href="javascript:;">删除</a></div>
+		<div>xfz2<a href="javascript:;">删除</a></div>
+		<div>xfz3<a href="javascript:;">删除</a></div>
+	</body>
+	<script type="text/javascript">
+	
+//		parentNode:dom对象的直接父级
+	
+		var a = document.getElementsByTagName("a");
+		
+		//循环遍历加监听
+		for(var i=0;i<a.length;i++){
+//			js中的一等公民,它可以作为参数传入,又可以作为返回值被返回出来
+//			a[i].onclick=function(){
+				//当中的i永远拿的是全局的i
+//			}
+
+
+//			(function(i){
+//				//当中的i永远拿的是每个独立函数作用域的i
+//				a[i].onclick=function(){
+//					a[i].parentNode.style.display="none"
+//				}
+//			})(i);
+			
+//			a[i].onclick=function(){
+//				this.parentNode.style.display="none"
+//			}
+			
+			a[i].onclick=function(){
+				a[i].parentNode.style.display="none"
+			}
+		}
+	</script>
+</html>

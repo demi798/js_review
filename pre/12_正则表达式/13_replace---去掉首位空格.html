@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var str = ' hello ';
+		console.log( '('+trim(str)+')' );
+		function trim(str){
+			var re = /^\s+|\s+$/g;
+			console.log(str.match(re));
+			return str.replace(re,'$');
+		}
+	</script>
+</html>

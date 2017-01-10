@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--简单的实现了一下match   至于我match对空白字符串的管理===》没有做任何处理-->
+	</head>
+	<body>
+	</body>
+	<script>
+		var result=match("ggg",/g/g);
+		console.log(result);
+		
+		function match(str,reg){
+			var arr=[];
+			//exec方法返回的是第一个匹配成功的子串，每一次调用exec 返回之后的匹配成功的子串  没有匹配成功的子串==》null
+			var flag=reg.exec(str);
+			if(reg.global){
+				while(flag){
+					arr.push(flag[0]);
+					flag=reg.exec(str);
+				}
+			}else{
+				arr.push(flag[0]);
+			}
+			return arr;
+		}
+	
+	
+//		function match(str,reg){
+//			var flag=reg.exec(str);
+//			var arr=[];
+//			if(reg.global){
+//				while(flag){
+//					arr.push(flag[0]);
+//					flag=reg.exec(str);
+//				}
+//			}else{
+//				arr.push(flag[0]);
+//			}
+//			return arr;
+//		}
+//		
+//		var result=match("ggggg",/g/);
+//		console.log(result);
+	</script>
+</html>

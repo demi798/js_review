@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		function match(str,reg){
+			var flag=reg.exec(str);
+			var arr=[];
+			if(reg.global){
+				while(flag){
+					arr.push(flag[0]);
+					flag=reg.exec(str);
+				}
+			}else{
+				arr.push(flag[0]);
+			}
+			return arr;
+		}
+		
+		var result=match("ggggg",/g/);
+		console.log(result);
+	</script>
+</html>

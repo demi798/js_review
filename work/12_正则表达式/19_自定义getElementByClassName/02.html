@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.test{
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="test           test test">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+//			为什么要自定义getElementsByClassName这个方法
+//					因为ie8以下,doucument的getElementsByClassName有兼容性问题
+//					
+//			实现过程需要注意的问题(需求)
+//				1.我们的class属性可能会有多个属性值
+//				2.这多个属性值很有可能重复
+//				3.属性值直接的分隔空格可能会有多个
+//				4.限定范围
+//				5.过滤元素
+
+		var arr = getElementByClassName("test");
+		console.log(arr.length);
+		
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.background="pink";
+		}
+		
+		//函数的提升  函数的提升要优于变量的提升
+		function getElementByClassName(className){
+			var arr =[];
+//			getElementsByTagName:没有兼容性问题
+			var all = document.getElementsByTagName("*");
+			for(var i=0;i<all.length;i++){
+//				属性的寻址		原型链
+//				变量的寻址		作用域链
+				var classArr = all[i].className.split(/\s+/);
+				for(var j=0;j<classArr.length;j++){
+					if(className==classArr[j]){
+						arr.push(all[i]);
+						break;//跳出当前循环
+						//continue 跳出本次循环
+						//return  结束当前函数
+					}
+				}
+			}
+			return arr;
+		};
+	</script>
+</html>

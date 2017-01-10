@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			absolute性质的盒子，
+				它的包含块的宽度等于它的盒模型的宽度 + left + right值，包含块的高度同理，
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				position: absolute;
+				left: 10px;
+				right: 10px;
+				padding: 0 200px;
+				/*width: 100px;*/
+				height: 100px;
+				background: hotpink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>浮动版</title>
+<!--
+	1.内容区被最后加载了,用户体验不好
+	2.扩展性差,元素容易错位
+-->
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		min-width: 600px;
+	}
+	div{
+		height:200px;
+	}
+	#left{
+		float: left;
+		width:200px;
+		background: pink;
+	}
+	#right{
+		float: right;
+		width:200px;
+		background: pink;
+	}
+	#center{
+		background:gray;
+		padding: 0 200px;
+	}
+</style>
+</head>
+<body>
+	<div id="left">left</div>
+	<div id="right">right</div>
+	<div id="center">center</div>
+</body>
+</html>

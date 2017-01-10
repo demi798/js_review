@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			浏览器认谁？===》property
+			用户操作的是谁？===》property
+		-->
+	</head>
+	<body>
+		<input type="checkbox" name="xfz" id="xfz" value="tg" />
+		<input type="button" value="test" id="test"/>
+	</body>
+	<script type="text/javascript">
+		var xfz=document.querySelector("#xfz");
+		var btn = document.getElementById("test");
+		
+		//dom0
+		btn.onclick=function(){
+			debugger
+			xfz.checked=true;
+		}
+		
+		//dom2
+		xfz.addEventListener("click",function(){
+			debugger
+		})
+		
+	</script>
+</html>

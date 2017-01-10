@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1.字符串是可以获取长度并循环的
+			2.replace方法的第二个参数可以是回调函数
+			3.回调函数的第一个参数是匹配成功的字符串
+		-->
+		<style type="text/css">
+			textarea{
+				width:200px;
+				height:200px;
+			}
+		</style>
+	</head>
+	<body>
+		替换前<br />
+		<textarea>
+		</textarea>
+		<br />
+		替换后<br />
+		<textarea>
+		</textarea>
+		<br />
+		<input type="button" value="确定" id="input1" />
+	</body>
+	<script>
+		var textarea1 = document.getElementsByTagName("textarea")[0];
+		var textarea2 = document.getElementsByTagName("textarea")[1];
+		var btn = document.getElementById("input1");
+		btn.onclick=function(){
+			var reg=/张晓飞|佟刚/g;
+			var text2 = textarea1.value;
+//			textarea2.value = text2.replace(reg,"***");
+//			replace方法的第二个参数可以是一个回调函数，
+//					回调函数的第一个参数是匹配成功的子串
+//					存在一个隐式迭代（基于lastindex）
+			textarea2.value = text2.replace(reg,function(str){
+				var star="";
+				for(var i=0;i<str.length;i++){
+					star+="*";
+				}
+//				alert(str);
+				return star;
+			});
+		}
+		
+	</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<!--
+			为什么要自定义getElementsByClassName这个方法
+					因为ie8以下,doucument的getElementsByClassName有兼容性问题
+					
+			实现过程需要注意的问题(需求)
+				1.我们的class属性可能会有多个属性值
+				2.这多个属性值很有可能重复
+				3.属性值直接的分隔空格可能会有多个
+				4.限定范围
+				5.过滤元素
+		-->
+<script>
+window.onload = function() {	
+	var testEls=getElementsByClassName(document,"li","test");
+	console.log(testEls);
+	for(var i=0;i<testEls.length;i++){
+		testEls[i].style.background="pink";
+	}
+	
+	function getElementsByClassName(parent,tagName,className){
+		var allEls = parent.getElementsByTagName(tagName);
+		var arr=[];
+		
+		var reg =new RegExp("\\b"+className+"\\b");
+		for(var i=0;i<allEls.length;i++){
+			if(reg.test(allEls[i].className)){
+				arr.push(allEls[i]);
+			}
+		}
+		return arr;
+	};
+}
+</script>
+</head>
+
+<body>
+    <ul id="ul1">
+    	<li>11111111</li>
+        <li class="test test  test">2222222222</li>
+        <li class="test nmx">3333333333</li>
+        <li >44444444444</li>
+    </ul>
+    <ul id="ul2">
+    	<li>11111111</li>
+        <li class="test test  test">2222222222</li>
+        <li class="test nmx">3333333333</li>
+        <li >44444444444</li>
+    </ul>
+    <div class="test">div</div>
+</body>
+</html>

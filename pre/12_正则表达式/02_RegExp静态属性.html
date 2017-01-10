@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--RegExp的静态属性,兼容性有些问题-->
+	</head>
+	<body>
+	</body>
+	<script>
+		var pattern = /(g)oogle/m;
+		var pattern2 = /(go)ogle/m;
+		var str = 'This is google！';
+		var str2 = 'This is google！2';
+		pattern.test(str); //执行一下
+		
+		console.log(RegExp.input); //This is google！
+		console.log(RegExp.leftContext); //This is
+		console.log(RegExp.rightContext); //！
+		console.log(RegExp.lastMatch); //google
+		console.log(RegExp.lastParen); //g
+		
+		pattern2.test(str2); //执行一下
+		
+	</script>
+</html>

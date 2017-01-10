@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			（源字符串，模式字符串，模式修饰符）
+			（必须要在开启全局的模式底下  g）
+			lastIndex的规则：
+				1.当lastIndex大于源字符串的长度时
+					test():false
+					exec():null
+					lastIndex:0
+					
+				2.当lastIndex小于源字符串的长度时
+					-匹配成功
+						test():true
+						exec():数组  封装了匹配成功的子字符串的信息
+						lastIndex:成功的子字符串的下一个位置
+					-匹配失败
+						test():false
+						exec():null
+						lastIndex:0
+				
+				3.当lastIndex等于源字符串的长度时
+					且它不匹配空白字符 
+						test():false
+						exec():null
+						lastIndex:0
+						
+				
+		-->
+	</head>
+	<body>
+	</body>
+	<script>
+		var pattern = /atguigu/g;
+		var str ='atguigu atguigu atguigu';
+		console.log(pattern.lastIndex+":"+pattern.test(str));
+		console.log(pattern.lastIndex+":"+pattern.exec(str));
+		console.log(pattern.lastIndex+":"+pattern.test(str));
+		console.log(pattern.lastIndex+":"+pattern.test(str));
+		console.log(pattern.lastIndex+":"+pattern.test(str));
+		console.log(pattern.lastIndex+":"+pattern.exec(str));
+		console.log(pattern.lastIndex+":"+pattern.test(str));
+		
+		
+		
+		
+	</script>
+</html>

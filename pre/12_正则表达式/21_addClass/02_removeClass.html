@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>	
+		<div class="test"></div>
+	</body>
+	<script>
+		/*
+		addClass
+		1.判断class是否为空
+			是：不做处理
+			否：原来的class中是否有要删除的class
+				是：从列表中删除，并且只去掉要删除的class，保留其他
+				否：不做处理
+		*/
+		var testNode =document.getElementsByClassName("test")[0];
+		removeClass(testNode,"test");
+		
+		
+		function removeClass(obj,className){
+			if(obj.className){
+				var arr = obj.className.split(/\s+/);
+				var index =undefined;
+				var reg =new RegExp("\\b"+className+"\\b");
+				if(reg.test(obj.className)){
+					index = indexOf(arr,className);
+					arr.splice(index,1);
+					obj.className = arr.join(" ");
+				}
+			}
+		}
+		
+		function indexOf(arr,item){
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==item){
+					return i;
+				}
+			}
+			return -1;
+		}
+	</script>
+</html>

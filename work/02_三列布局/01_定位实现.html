@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="	-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				/*2*left+right*/
+				min-width: 600px;
+			}
+			div{
+				height: 200px;
+			}
+			#left,#right{
+				width: 200px;
+				background: pink;
+			}
+			#left{
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			#right{
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			#middle{
+				/*width: 100%;*/
+				padding: 0 200px;
+				background:deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="left">
+			left
+		</div>
+		<div id="middle">
+			middle
+		</div>
+		<div id="right">
+			right
+		</div>
+	</body>
+</html>

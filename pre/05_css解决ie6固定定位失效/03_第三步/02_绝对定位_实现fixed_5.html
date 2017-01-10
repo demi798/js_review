@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			忽略body的百分比,此时body的高度是会被子元素撑开的,所以body的高度等于子元素的高度,即不会出现滚动条
+		-->
+		<style>
+			div{
+				border: solid 1px black;
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+			}
+			
+			body{
+				border: solid 1px pink;
+				height: 100%;
+				margin: 0;
+				overflow: auto;				
+			}
+			
+			html{
+				border: solid 1px blue;
+				overflow: hidden;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<p style="height: 2000px;width: 50px;background: gray;"></p>
+	</body>
+</html>

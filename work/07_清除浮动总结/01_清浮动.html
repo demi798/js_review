@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			/*清除浮动是用来解决高度塌陷的  让浮动的子元素撑开他的父容器*/
+			/*clear:both*/
+			
+			
+			/*1.给父级加高度*/
+			#wrap{
+				border: 1px solid;
+				height: 400px;
+			}
+			#inner{
+				float: left;
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+		</div>
+	</body>
+</html>

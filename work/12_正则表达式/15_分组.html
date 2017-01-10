@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//			在正则表达式中:
+//				量词只能修饰它前面的一个字符
+//				我们分组可以让量词修饰它前面更多的字符
+
+		var reg = /a(bc)+/g;
+		var str = "aabcbcbcbc";
+		console.log(str.match(reg));
+	</script>
+</html>

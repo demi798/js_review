@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	作者：offline
+        	时间：2016-04-14
+        	描述：
+        		两个紧挨字符之间存在着一个\s{0}
+        		字符串开头和结尾都纯在一个\s{0};
+    		
+    		正则表达式只认/s{0}，不认""
+    		split方法参数为字符串时认"",相当于做了一个转换
+        -->
+	</head>
+	<body>
+	</body>
+	
+	<script>
+		var strArry0=" nmx".split(/\s{0}/);
+		var strArry1="nmx".split("");
+		var strArry2="nmx".split(/\s+/);
+//		/s{0} 空格 n 空格 m x 空格 /s{0}
+		var strArry3=" nmx ".split(/\s+/);
+		console.log(strArry0);
+		console.log(strArry1);
+		console.log(strArry2);
+		console.log(strArry3);//["", "n", "m", "x", ""]
+	</script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html id="html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+	<!--
+		ie7以上指的是:ie8及ie8以上
+		ie7以下指的是:ie7及ie7以下
+	-->
+	
+	<!--
+		测试的主要线路(讨论些什么情况)	
+			1.浏览器是什么
+				ie7以下（ie7）
+				ie7以上（火狐）
+				ie7以上（chrome,ie8,ie9）
+			
+			2.祖先有没有定位
+				祖先没有定位
+				祖先有定位
+				
+			3.本身有没有定位
+				本身没有定位
+				本身定位为fiexd
+				本身定位为absoult/relative
+	-->
+	
+	<!--
+		HTMLElement.offsetParent 是一个只读属性，
+		返回一个指向最近的（closest，指包含层级上的最近）包含该元素的定位元素。
+		如果没有定位的元素，则 offsetParent 为最近的 table 元素对象或根元素（标准模式下为 html；quirks 模式下为 body）。
+		当元素的 style.display 设置为 "none" 时，offsetParent 返回 null。offsetParent 很有用，
+		因为 offsetTop 和 offsetLeft 都是相对于其内边距边界的
+	-->
+<style>
+	div {padding: 40px 50px;}
+	#div1 {background: red;position: fixed;}
+	#div2 {background: green;}
+	#div3 {background: orange;position: fixed;}
+</style>
+<script>
+window.onload = function() {		
+	var oDiv3 = document.getElementById('div3');
+	alert( oDiv3.offsetParent.id );
+}
+</script>
+</head>
+
+<body id="body">
+	<div id="div1">
+    	<div id="div2">
+        	<div id="div3"></div>
+        </div>
+    </div>
+</body>
+</html>

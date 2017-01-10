@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box"  class="test2 test  test"></div>
+	</body>
+	<script type="text/javascript">
+//		addClass:为一个元素去添加class
+//			1.如果对象中存在对应得class  什么都不干
+//			2.如果对象中不存在对应得class  添加一个
+//		removeClass:为一个元素去删除一个class
+//			1.如果对象中存在对应得class  应该删除
+//			2.如果对象中不存在对应得class  什么都不干
+//
+
+		var box = document.querySelector("#box");
+		addClass(box,"test");
+		function addClass(node,className){
+			var reg =new RegExp("\\b"+className+"\\b");
+			if(!reg.test(node.className)){
+				node.className +=(" "+className);
+			}
+		}
+		
+		removeClass(box,"test");
+		function removeClass(node,className){
+			var reg =new RegExp("\\b"+className+"\\b","g");
+			if(reg.test(node.className)){
+				node.className=node.className.replace(reg,"");
+			}
+		}
+		
+		addClass(box,"test");
+	</script>
+</html>

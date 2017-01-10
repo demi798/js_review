@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html >
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>03_圣杯布局</title>
+<!--
+	优点：
+		内容部分(中间列)优先加载，且实现响应宽
+		结构上仅仅添加了一个父级容器
+		任何一列都可以作为最高列
+	缺点：
+		使用了相对定位与负边距，过于复杂
+-->
+<style type="text/css">
+    *{margin: 0;padding: 0;}
+    body{min-width: 600px;}
+    .header,.footer{ 
+        border: 1px solid #333;
+        background: #aaa;
+        text-align: center;
+    }
+    .left,.middle,.right{ 
+        position: relative;
+        float: left;
+          
+        padding-bottom: 10000px;
+        margin-bottom: -10000px;
+        /*min-height: 300px;*/
+    }
+    .container{
+        padding:0 200px 0 200px;
+        overflow: hidden;
+    }
+    .left{
+        margin-left: -100%;
+        left: -200px;
+        width: 200px;
+        background: red;
+    }
+    .right{
+        margin-left: -200px;
+        right: -200px;
+        width: 200px;
+        background: green;
+    }
+    .middle{ 
+        width: 100%;
+        background: blue;
+    }
+    .footer{ 
+        clear: both;
+    }
+</style>
+</head>
+
+<body>
+	<div class="header">
+	    <h4>header</h4>
+	</div>
+	<div class="container">
+	    <div class="middle">
+	        <h4>middle</h4>
+	        text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	        text<br />text<br />text<br />text<br />
+	    </div>
+	    <div class="left">
+	    	<h4>left</h4>
+	        <p>
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,<br />
+	        	大头大头下雨不愁,
+	        </p>
+	    </div>
+	    <div class="right">
+	   	 	<h4>right</h4>
+	        <p>
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头<br />
+	        	人家有伞,我有大头
+	        </p>
+	    </div>
+	</div>
+	<div class="footer">
+        <h4>footer</h4>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html id="html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+	<!--
+		ie7以上指的是:ie8及ie8以上
+		ie7以下指的是:ie7及ie7以下
+	-->
+	
+	
+<style>
+	div {padding: 40px 50px;}
+	#div1 {background: red;position: fixed;}
+	#div2 {background: green;}
+	#div3 {background: orange;position: fixed;}
+</style>
+<script>
+window.onload = function() {		
+	var oDiv3 = document.getElementById('div3');
+	alert( oDiv3.offsetParent.id );
+}
+</script>
+</head>
+
+<body id="body">
+	<div id="div1">
+    	<div id="div2">
+        	<div id="div3"></div>
+        </div>
+    </div>
+</body>
+</html>

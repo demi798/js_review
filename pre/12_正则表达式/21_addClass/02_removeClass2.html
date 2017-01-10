@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="xfz tg test"></div>
+	</body>
+	<script type="text/javascript">
+		/*
+		addClass
+		1.判断class是否为空
+			是：不做处理
+			否：原来的class中是否有要删除的class
+				是：从列表中删除，并且只去掉要删除的class，保留其他
+				否：不做处理
+		*/
+		
+		var div = document.getElementsByTagName("div")[0];
+		removeClass(div,"test");
+		
+		
+		function removeClass(node,className){
+			var arr = node.className.split(/\s+/);
+			
+			if(node.className){
+				//有class
+				var index = indexOf(arr,className);
+				if(!index==-1){
+					arr.splice(index,1);
+					node.className = arr.join(" ");
+				}
+			}
+		}
+		
+		
+		//得到一个字符串在主串中首次的位置
+		function indexOf(arr,item){
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]==item){
+					return i;
+				}
+			}
+			return -1;
+		}
+	</script>
+</html>

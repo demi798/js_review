@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+        	作者：offline
+        	时间：2016-04-14
+        	描述：
+        		两个紧挨字符之间存在着一个\s{0}
+        		字符串开头和结尾都纯在一个\s{0};
+    		
+    		正则表达式只认/s{0}，不认""
+    		split方法参数为字符串时认"",相当于做了一个转换
+        -->
+	</head>
+	<body>
+	</body>
+	
+	<script>
+		//		"\s{0}g\s{0}g\s{0}g\s{0}g\s{0}g\s{0}"
+	
+		var str ="ggggg";
+		var reg=/g/g;
+		var arr=str.split(reg);
+		console.log(arr);
+	</script>
+</html>

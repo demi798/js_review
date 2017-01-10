@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			3.让body与与包含块重叠
+				----高度上一样,
+				----这是必要的,当我们打开调试工具的时候,滚动条应该相应的缩小,
+					果然不让body与包含块的高度一致,滚动条是不会缩小的
+		-->
+		<style>
+			div{
+				border: solid 1px black;
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+			}
+			
+			body{
+				border: solid 1px pink;
+				height: 100%;
+				margin: 0;
+				overflow: auto;				
+			}
+			
+			html{
+				border: solid 1px blue;
+				overflow: hidden;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<p style="height: 2000px;width: 50px;background: gray;"></p>
+	</body>
+</html>

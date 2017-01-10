@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+	div:(块级)
+		内层元素正常时,外层元素的高度,宽度由内层元素撑开,高度为内层元素高度,宽度为自己父元素的100%
+		内层元素浮动时,内层元素撑不开外层元素
+		内层元素定位时,内层元素撑不开外层元素(absolute,fixed)
+				       与正常元素相同(relative,static默认)
+-->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!--
+			1.当父元素没有高度时,子元素为absolute,fixed,子元素是撑不开父元素的高度的
+			2.与正常元素相同(relative,static默认)
+			
+			加这三也没用
+				overflow: auto; 	
+				overflow: scroll;	
+				overflow: hidden;	
+		-->
+		<style>
+			.box{
+				background-color: red;
+				border: 1px solid black;			
+				/*overflow: auto;*/
+				/*overflow: scroll;*/
+				overflow: hidden;
+				
+			}
+			.item{
+				width: 300px;
+				height: 300px;
+				background-color: blue;
+				/*position: absolute;*/
+				position: fixed;
+				/*position: relative;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="item"></div>
+		</div>
+	</body>
+</html>

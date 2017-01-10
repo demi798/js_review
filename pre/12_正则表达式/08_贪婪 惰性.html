@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+	</body>
+	<script>
+		var pattern = /8.*?8/g;
+		var str="8nmx8 8nmx8 8nmx8".replace(pattern,"<strong>nmx</strong>");
+		document.write(str);
+		
+		
+		var pattern = /8[^8]*8/g;
+		var str="8nmx8 8nmx8 8nmx8".replace(pattern,"<strong>nmx</strong>");
+		document.write(str);
+	</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--
+			1.内部的Box会在垂直方向，一个接一个地放置。
+			3.每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+			4.BFC的区域不会与float box重叠。
+		-->
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.left{
+				width: 200px;
+				height: 600px;
+				background: deeppink;
+				float: left;
+				/*opacity: 0;*/
+			}
+			.main{
+				height: 600px;
+				background: pink;
+				overflow: auto;
+				/*opacity: 0;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left">left</div>
+    	<div class="main">main</div>
+	</body>
+</html>
+
+

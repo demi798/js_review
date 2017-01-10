@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--[if IE 8]><i></i><![endif]-->
+	</body>
+	<script>
+		console.log(isIe(8));
+		function isIe(ver){
+			var b = document.createElement("b");
+			b.innerHTML="<!--[if IE "+ver+"]><i></i><![endif]-->";
+			return b.getElementsByTagName("i").length ==1;
+		}
+	</script>
+</html>

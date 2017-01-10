@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--非布尔值属性
+			 这个属性的property类型不是布尔类型
+			 
+			非布尔值属性的attribute和property会实时同步！！！
+		-->
+	</head>
+	<body>
+		<input type="checkbox" name="xfz" id="xfz" value="tg" />
+	</body>
+	<script type="text/javascript">
+		var xfz=document.querySelector("#xfz");
+		
+		debugger;
+		xfz.setAttribute("name","xfz0");
+		
+		xfz.name="xfz1";
+		xfz.name="xfz2";
+		xfz.name="xfz3";
+		xfz.name="xfz4";
+		xfz.name="xfz5";
+		
+		
+		xfz.setAttribute("name","xfz6");
+		xfz.setAttribute("name","xfz7");
+		xfz.setAttribute("name","xfz8");
+		xfz.setAttribute("name","xfz9");
+		xfz.setAttribute("name","xfz10");
+		xfz.setAttribute("name","xfz11");
+	</script>
+</html>

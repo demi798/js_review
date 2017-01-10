@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+		 		margin: 0;
+		 		padding: 0;
+		 	}
+		 	div {padding: 40px 50px;}
+			#div1 {background: red;position: fixed;border: 10px solid;margin: 30px;}
+			#div2 {background: green;position: absolute;}
+			#div3 {background: orange;position: relative;left: 100px;top: 100px;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+	    	<div id="div2">
+	        	<div id="div3"></div>
+	        </div>
+    	</div>
+	</body>
+	<script type="text/javascript">
+		
+	
+//	元素本身定位不为fixed
+//		祖先没有定位
+//				所有浏览器 offsetParent==>body
+//		祖先有定位
+//				所有浏览器 offsetParent==>定位祖先
+//	
+//	元素本身定位为fixed		
+//		非火狐  offsetParent==>null	
+//		火狐     offsetParent==>body
+		
+		
+		//清除默认样式   考虑border的值
+		function getPos(obj){
+			var pos={left:0,top:0};
+			while(obj){
+				pos.left+=obj.offsetLeft;
+				pos.top+=obj.offsetTop;
+				obj=obj.offsetParent;
+			}
+			return pos;
+		}
+		
+		
+		//获取所有元素的边框
+		
+		var div3 = document.getElementById("div3");
+//		console.log(getPos(div3));
+
+		console.log(div3.getBoundingClientRect());
+	</script>
+</html>

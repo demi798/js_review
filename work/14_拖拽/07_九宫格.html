@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#test{
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				background: pink;
+				z-index: 999;
+			}
+			
+			#others{
+				position: absolute;
+				left: 500px;
+				top: 200px;
+				width: 220px;
+				height: 288px;
+				background: pink;
+			}
+		</style>
+		<script type="text/javascript" src="js/drag.js"></script>
+	</head>
+	<body>
+		<div id="test">
+			
+		</div>
+		<img src="tg.png" id="others"/>
+	</body>
+	<script type="text/javascript">
+		//1.首先我们拿到拖拽元素一开始的坐标，再获取鼠标移动的距离，把移动的距离加给拖拽元素
+		var test = document.getElementById("test");
+		var img = document.getElementById("others");
+		drag(test,img);
+	</script>
+	
+</html>

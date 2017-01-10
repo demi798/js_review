@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <!--
+			HTMLElement.offsetLeft 是一个只读属性，
+			 		返回当前元素左上角相对于  HTMLElement.offsetParent 
+			 		节点的左边界偏移的像素值。
+			  		
+			HTMLElement.offsetTop 为只读属性，
+					它返回当前元素相对于其 offsetParent 元素的顶部的距离
+				
+				
+				
+				
+			offsetParent(body和html不应该有任何空隙)
+				父级没有定位
+						==> offsetParent:body
+				父级有定位
+						==> offsetParent:定位父级
+				本身定位为fixed
+					不是火狐
+						==>offsetParent:null
+					是火狐
+						==>offsetParent:body	
+		 -->
+		 <style type="text/css">
+		 	*{
+		 		margin: 0;
+		 		padding: 0;
+		 	}
+		 	div {padding: 40px 50px;}
+			#div1 {background: red;position: fixed;border: 10px solid;margin: 30px;}
+			#div2 {background: green;}
+			#div3 {background: orange;position: relative;}
+		 </style>
+	</head>
+	<body>
+		<div id="div1">
+	    	<div id="div2">
+	        	<div id="div3"></div>
+	        </div>
+    	</div>
+	</body>
+	<script type="text/javascript">
+		var div3 = document.getElementById("div3");
+		console.log("offsetLeft: "+div3.offsetLeft);
+		console.log("offsetTop: "+div3.offsetTop);
+	</script>
+</html>

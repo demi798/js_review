@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var reg=/a/g;
+		console.log(reg.test("aaa"));//true
+		console.log(reg.exec("aaa"));//true
+		console.log(reg.test("aaa"));//true
+		console.log(reg.test("aaa"));//false
+		
+		console.log(/[a]/g.test("aaa"));//true
+		console.log(/[a]/g.test("aaa"));//true
+		console.log(/[a]/g.test("aaa"));//true
+		console.log(/[a]/g.test("aaa"));//true
+	</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<!--
+	过滤元素
+-->
+<script>
+window.onload = function() {	
+	var testEls=getElementsByClassName(document,"div","test");
+	console.log(testEls);
+	for(var i=0;i<testEls.length;i++){
+		testEls[i].style.background="pink";
+	}
+	
+	function getElementsByClassName(parent,tagName,className){
+		var allEls = parent.getElementsByTagName(tagName);
+		var arr=[];
+		
+		for(var i=0;i<allEls.length;i++){
+			var classArr = allEls[i].className.split(/\s+/);
+			for(var j=0;j<classArr.length;j++){
+				if(classArr[j]==className){
+					arr.push(allEls[i]);
+					break;
+				}
+			}
+		}
+		return arr;
+	};
+}
+</script>
+</head>
+
+<body>
+    <ul id="ul1">
+    	<li>11111111</li>
+        <li class="test test  test">2222222222</li>
+        <li class="test nmx">3333333333</li>
+        <li >44444444444</li>
+    </ul>
+    <ul id="ul2">
+    	<li>11111111</li>
+        <li class="test test  test">2222222222</li>
+        <li class="test nmx">3333333333</li>
+        <li >44444444444</li>
+    </ul>
+    <div class="test">div</div>
+</body>
+</html>

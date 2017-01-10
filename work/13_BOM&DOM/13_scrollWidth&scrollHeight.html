@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#wrap{
+				width: 200px;
+				height: 200px;
+				border: 1px solid;
+				margin:0 auto;
+				overflow: auto;
+			}
+			#inner{
+				width: 100px;
+				height: 100px;
+				background: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="inner">
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var wrap = document.getElementById("wrap");
+		var w = wrap.scrollWidth;
+		var h = wrap.scrollHeight;
+		
+		
+		console.log(w+"  "+h);
+	</script>
+</html>

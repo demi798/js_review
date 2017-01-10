@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	
+	</head>
+	<body>
+		<input type="button" name="测试" id="btn" value="测试"/>
+	</body>
+	<script>
+	
+		var btn = document.getElementById("btn");
+		var data ="xfz";
+		btn.onclick=function(){
+
+			var newObj= open("http://127.0.0.1:8020/%E8%AF%BE%E7%A8%8B_0830/work/13_BOM&DOM/05_open.html");
+			
+			console.log(window == newObj);
+			console.log(window == newObj.opener);
+		}
+	
+		
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#test{
+				/*width: 200px;*/
+				height: 200px;
+				border: 10px dashed;
+				padding: 50px;
+				margin: 50px;
+				background: pink;
+				box-sizing: border-box;
+			}
+			
+			
+			#test{
+				/*width: 300px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test" style="width: 400px;">
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var test = document.getElementById("test");
+//		clientWidth/H   ==>  内容区+padding
+		console.log(test.clientWidth);
+
+//		offsetWidth/H	==> 内容区+padding+border
+		console.log(test.offsetWidth);
+		
+//		width(写操作)  200px  （优先级高）
+		console.log(test.style.width);
+//		width(读操作)	  200
+		console.log(test.offsetWidth);
+	</script>
+</html>

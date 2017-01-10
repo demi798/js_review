@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+//		加不加g对exec没有影响,照样获取子项的集合
+		var pattern =/ab+c/g;
+//		console.log(pattern.test("abbbbbc"));
+		console.log(pattern.exec("abbbbbc"));
+		
+		var reg =/(ab)+c/g;
+//		console.log(reg.test("abababababc"));
+		console.log(reg.exec("abababababc"));
+		
+//		match不加g的时候才可以获取到子项的集合
+		var str = 'abc1abc1abc';
+		var re = /(a)(b)(c)/;
+		console.log( str.match(re) ); 
+	</script>
+</html>

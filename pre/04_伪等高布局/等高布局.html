@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>等高布局</title>
+	
+<!--
+margin为负:
+	例如css绝对定位的元素定义的top、right、bottom、left等值是元素自身的边界到最近的已定位的祖先元素的距离，
+	这个元素自身的边界指的就 是margin定义的边界，所以，如果margin为正的时候，那它的边界是向外扩的，
+	如果margin为负的时候，则它的边界是向里收的
+-->
+		
+
+<style>
+	body{margin:0;}
+	.wrap{ 
+		width:900px;
+		margin:0 auto; 
+		border:10px solid #000;
+		overflow:hidden; /*必须的*/
+		}
+	.wrap:after{
+		content:"";
+		display:block;
+		clear:both;
+		}
+	.left{
+		width:200px;
+		background:Red;
+		float:left;
+		padding-bottom:1000px; 
+		margin-bottom:-1000px;
+		} 
+	.right{
+		width:200px;
+		background:blue;
+		float:right;
+		padding-bottom:1000px;
+		margin-bottom:-1000px;
+		}
+</style>
+</head>
+<body>
+<div class="wrap">
+	<div class="left">
+    	&nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+    	&nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+        &nbsp;left页面内容<br/>
+    </div>
+    <div class="right">
+    	&nbsp;right页面内容<br/>
+    </div>
+</div>
+</body>
+</html>

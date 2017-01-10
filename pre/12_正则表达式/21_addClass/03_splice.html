@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		/*splice(): 删除或插入元素
+					返回删除的元素
+					会影响老数组 
+					
+					如果第一个参数不为数值,则会自动类型转换,比较特殊的是这里的NaN会转成0*/
+		arr = [1, 2, 3, 4];
+		//arr.splice(index, 1); //删除2,3
+		arr.splice(2, 0, 5);//在2与3之间插入5
+		console.log(arr);
+	</script>
+</html>

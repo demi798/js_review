@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--当祖先元素中没有拥有除static定位的元素时,absolute定位的包含块为初始包含块-->
+		<style>
+			div{
+				border: solid 1px black;
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 30px;
+				top: 30px;
+			}
+			
+			body{
+				border: solid 1px pink;
+				height: 3000px;
+			}
+			
+			html{
+				border: solid 1px blue;
+				margin: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+		</div>
+	</body>
+</html>
